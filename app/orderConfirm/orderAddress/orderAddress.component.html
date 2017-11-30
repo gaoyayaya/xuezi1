@@ -1,0 +1,17 @@
+
+<div id="recvAddress">
+    <h1>添加收货地址</h1>
+    <input type="text" name="name" required placeholder="请输入收件人姓名" [(ngModel)]="userName">
+    <br>
+    <input type="text" class="small" required name="province" placeholder="省份" [(ngModel)]="province">
+    <input type="text" class="small" required name="city" placeholder="市" [(ngModel)]="city">
+    <input type="text" class="small" required name="country" placeholder="县" [(ngModel)]="country">
+    <br>
+    <input type="text" name="address" required placeholder="请输入详细地址" [(ngModel)]="userAddr">
+    <br>
+    <input type="text" name="phone" required placeholder="请输入收件人电话" [(ngModel)]="userPhone">
+    <br>
+    <input type="text" name="youbian" required placeholder="请输入邮编" [(ngModel)]="userYoubian">
+    <br>
+    <button (click)="addAddr()">添加收货地址</button>
+</div>

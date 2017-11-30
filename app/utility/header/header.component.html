@@ -1,0 +1,45 @@
+<!-- 页面顶部-->
+<header id="top">
+  <div id="logo" class="lf">
+    <a routerLink="/index">
+      <img class="animated jello" src="img/header/logo.png" alt="logo"/>
+    </a>
+  </div>
+  <div id="top_input" class="lf">
+    <input id="input" class="input-kw" type="text" 
+    [(ngModel)]="kword" placeholder="请输入您要搜索的内容"/>
+    <div class="seek" tabindex="-1">
+      <div class="actived"><span>分类搜索</span> <img src="img/header/header_normal.png" alt=""/></div>
+      <div class="seek_content">
+        <div id="xxyp">学习用品</div>
+        <div id="srdz">私人订制</div>
+      </div>
+    </div>
+    <a class="rt" [routerLink]="['/list/',{kw:kword}]">
+      <img id="search" src="img/header/search.png" alt="搜索"/>
+    </a>
+  </div>
+  <div class="rt">
+    <ul class="lf">
+      <li><a routerLink="/myCollect" title="我的收藏"><img class="care" src="img/header/care.png" alt=""/></a><b>|</b></li>
+      <li><a routerLink="/userCenter" title="用户中心"><img class="order" src="img/header/order.png" alt=""/></a><b>|</b></li>
+      <li><a routerLink="/cart" title="我的购物车"><img class="shopcar" src="img/header/shop_car.png" alt=""/></a><b>|</b></li>
+    </ul>
+    <ul class="lf login_info" *ngIf="!isUserLogin">
+      <li><a routerLink="/register" title="注册新用户">&nbsp;注册</a><b>|</b></li>
+      <li><a routerLink="/login" title="用户登录">登录</a></li>
+    </ul>
+    <ul class="lf login_info" *ngIf="isUserLogin">
+      <li><a (click)="logout()" title="退出">欢迎:{{userName}} &nbsp;退出</a><b>|</b></li>
+      <li><a routerLink="/userCenter" title="用户中心">用户中心</a></li>
+    </ul>
+  </div>
+</header>
+<!-- nav主导航-->
+<nav id="nav">
+  <ul>
+    <li><a routerLink="/index">首页</a></li>
+    <li><a routerLink="/lookforward" class="activ">学习用品</a></li>
+    <li><a routerLink="/lookforward">私人定制</a></li>
+  </ul>
+</nav>
